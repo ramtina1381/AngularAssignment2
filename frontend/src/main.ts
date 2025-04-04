@@ -16,7 +16,7 @@ bootstrapApplication(AppComponent, {
       const httpLink = inject(HttpLink);
       return {
         link: httpLink.create({
-          uri: 'http://localhost:4000/graphql', // ✅ Replace with your actual backend URL
+          uri: 'https://backend-six-plum.vercel.app/api/graphql', // ✅ Replace with your actual backend URL
         }),
         cache: new InMemoryCache(),
       };
