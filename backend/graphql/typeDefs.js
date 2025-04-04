@@ -27,6 +27,7 @@ const typeDefs = gql`
     department: String
     employee_photo: String
 }
+    
 
 
   # Types for User
@@ -45,6 +46,7 @@ const typeDefs = gql`
 
   # Queries
   type Query {
+    employees: [Employee!]!
     login(email: String!, password: String!): Token!
     getAllEmployees: [Employee!]!
     searchEmployeeById(id: ID!): Employee
