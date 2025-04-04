@@ -1,0 +1,20 @@
+<div class="app-container">
+  <h1>Ramtin Abolfazli Angular Application</h1>
+  <form [formGroup]="signupForm" (ngSubmit)="submitForm($event)" class="login-form">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="string" formControlName="username" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" formControlName="email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" formControlName="password" required />
+    </div>
+    <button type="submit" class="btn">Sign up</button>
+    <p>Already have an account? <a routerLink="/">Login</a></p> <!-- Back to Login -->
+  </form>
+</div>
+

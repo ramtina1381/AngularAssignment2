@@ -1,0 +1,93 @@
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Styling */
+.app-container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+}
+
+/* Header Styling */
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4b9cd3;
+}
+
+/* Button Styling */
+button {
+  padding: 12px;
+  background-color: #4b9cd3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3578b6;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Add a responsive touch */
+@media (max-width: 600px) {
+  .app-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}

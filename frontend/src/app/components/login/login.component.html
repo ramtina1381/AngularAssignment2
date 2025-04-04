@@ -1,0 +1,31 @@
+<!-- <div class="app-container">
+  <h1>Ramtin Abolfazli Angular Application</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm($event)" class="login-form">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" formControlName="email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" formControlName="password" required />
+    </div>
+    <button type="submit" class="btn">Login</button>
+    <p>Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+  </form>
+</div> -->
+
+<div class="app-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="login-form">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required />
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid" class="btn">Login</button>
+    <p>Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+  </form>
+</div>

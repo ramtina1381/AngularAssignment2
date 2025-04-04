@@ -1,0 +1,18 @@
+<div *ngIf="loading">Loading employee details...</div>
+<div *ngIf="!loading && employee">
+  <h2>{{ employee.first_name }} {{ employee.last_name }}'s Details</h2>
+  <div class="employee-details">
+    <p><strong>Full Name:</strong> {{ employee.first_name }} {{ employee.last_name }}</p>
+    <p><strong>Email:</strong> {{ employee.email }}</p>
+    <p><strong>Gender:</strong> {{ employee.gender }}</p>
+    <p><strong>Designation:</strong> {{ employee.designation }}</p>
+    <p><strong>Department:</strong> {{ employee.department }}</p>
+    <p><strong>Salary:</strong> ${{ employee.salary }}</p>
+    <p><strong>Date of Joining:</strong> {{ employee.date_of_joining }}</p>
+    <p *ngIf="employee.employee_photo">
+      <strong>Employee Photo:</strong><br />
+      <img [src]="employee.employee_photo" alt="{{ employee.first_name }}'s Photo" width="200" />
+    </p>
+  </div>
+  <button [routerLink]="['/employee']" class="back-btn">Back to List</button>
+</div>

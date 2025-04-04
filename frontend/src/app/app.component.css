@@ -1,0 +1,20 @@
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+.app-container {
+  display: flex;
+  justify-content: center;  /* Aligns the content horizontally in the center */
+  align-items: center;      /* Aligns the content vertically in the center */
+  height: 100vh;            /* Ensures the container takes up the full height of the viewport */
+  text-align: center;       /* Optional: Centers the text inside the container */
+  background-color: #f7f7f7; /* Optional: Set a background color for better visualization */
+}

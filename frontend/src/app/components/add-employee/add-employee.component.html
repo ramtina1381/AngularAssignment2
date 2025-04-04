@@ -1,0 +1,37 @@
+<div class="add-employee-container">
+  <h2>Add Employee</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+    <label>First Name:</label>
+    <input type="text" formControlName="first_name" required />
+
+    <label>Last Name:</label>
+    <input type="text" formControlName="last_name" required />
+
+    <label>Email:</label>
+    <input type="email" formControlName="email" required />
+
+    <label>Gender:</label>
+    <select formControlName="gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Designation:</label>
+    <input type="text" formControlName="designation" required />
+
+    <label>Salary:</label>
+    <input type="number" formControlName="salary" required min="0" />
+
+    <label>Date of Joining:</label>
+    <input type="date" formControlName="date_of_joining" required />
+
+    <label>Department:</label>
+    <input type="text" formControlName="department" required />
+
+    <label>Profile Picture (optional):</label>
+    <input type="text" formControlName="employee_photo" /> <!-- or file input if needed -->
+
+    <button type="submit" [disabled]="employeeForm.invalid">Add</button>
+  </form>
+</div>
