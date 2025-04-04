@@ -25,25 +25,20 @@ const connectDB = require("./config/db");
 const typeDefs = require("./graphql/typeDefs");
 const resolvers = require("./graphql/resolvers");
 
-connectDB();
-
 const app = express();
 const server = new ApolloServer({ typeDefs, resolvers });
 
-// Make sure the Apollo Server starts and middleware is applied
 async function startServer() {
   await server.start();
   server.applyMiddleware({ app });
-
-  // Listen on a dynamic port to support Vercel's serverless environment
-  app.listen(process.env.PORT || 4000, () =>
-    console.log(`Server running on http://localhost:${process.env.PORT || 4000}/graphql`)
-  );
+  console.log(`Server running on http://localhost:${process.env.PORT || 4000}/graphql`);
 }
 
 // Vercel expects an exported async handler
 module.exports = async (req, res) => {
-  // Initialize the server when a request comes in
-  await startServer();
+  if (!server.listening) {
+    await startServer();
+  }
   return app(req, res); // Respond with the app's express request handler
 };
+
