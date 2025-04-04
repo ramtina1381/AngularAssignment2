@@ -1,0 +1,37 @@
+<div class="edit-employee-container">
+  <h2>Edit Employee</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="updateEmployee()">
+    <label>First Name</label>
+    <input formControlName="first_name" type="text" required />
+
+    <label>Last Name</label>
+    <input formControlName="last_name" type="text" required />
+
+    <label>Email</label>
+    <input formControlName="email" type="email" required />
+
+    <label>Gender</label>
+    <select formControlName="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <label>Designation</label>
+    <input formControlName="designation" type="text" />
+    <label>Salary</label>
+    <input formControlName="salary" type="number" />
+
+
+    <label>Date of Joining</label>
+    <input formControlName="date_of_joining" type="date" />
+
+    <label>Department</label>
+    <input formControlName="department" type="text" />
+
+    <label>Employee Photo URL</label>
+    <input formControlName="employee_photo" type="text" />
+
+    <button type="submit" class="primary-btn">Update Employee</button>
+    <button type="button" class="secondary-btn" [routerLink]="['/employee']">Cancel</button>
+  </form>
+</div>

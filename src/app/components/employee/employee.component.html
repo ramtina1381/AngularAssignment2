@@ -1,0 +1,41 @@
+<div class="employee-container">
+  <h2>Employee List</h2>
+
+  <div class="search-container">
+    <input type="text" [(ngModel)]="designation" placeholder="Search by Designation">
+    <input type="text" [(ngModel)]="department" placeholder="Search by Department">
+    <button (click)="searchEmployees()">Search</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate over employees -->
+      @for (emp of employees; track emp.id) {
+        <tr>
+          <td>{{ emp.first_name }}</td>
+          <td>{{ emp.last_name }}</td>
+          <td>{{ emp.email }}</td>
+          <td class="actions">
+            <button class="action-btn delete" (click)="deleteEmployee(emp.id)">Delete</button>
+            <button class="action-btn info" (click)="debug(emp.id)" [routerLink]="['/employee-details', emp.id]">Employee Details</button>
+            <button class="action-btn edit" [routerLink]="['/edit-employee', emp.id]">Edit</button>
+          </td>
+        </tr>
+      }@empty {
+        <tr><td colspan="4" class="no-data">No employees available</td></tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="action-buttons">
+    <button [routerLink]="['/add-employee']" class="primary-btn">Add Employee</button>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</div>
